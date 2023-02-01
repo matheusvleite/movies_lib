@@ -31,7 +31,7 @@ export const useFetchDocument = (id: string | undefined) => {
 
         loadData()
 
-    }, [document, cancelled, url])
+    }, [cancelled, url])
 
     useEffect(() => {
         return () => setCancelled(true);
