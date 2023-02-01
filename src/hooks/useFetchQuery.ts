@@ -32,7 +32,7 @@ export const useFetchQuery = (query: string | null) => {
         loadData()
 
 
-    }, [query])
+    }, [url])
 
     return { documents, loading, error }
 }
