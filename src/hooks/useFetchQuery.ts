@@ -11,8 +11,9 @@ export const useFetchQuery = (query: string | null) => {
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState();
 
+    const url = `${searchURL}?${apiKey}&query=${query}`;
+
     useEffect(() => {
-        const url = `${searchURL}?${apiKey}&query=${query}`;
 
         const loadData = async () => {
             setLoading(true);
