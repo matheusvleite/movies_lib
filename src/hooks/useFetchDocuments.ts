@@ -31,7 +31,7 @@ export const useFetchDocuments = (search: string | null = '') => {
 
         loadData()
 
-    }, [documents, cancelled, search]);
+    }, []);
 
     useEffect(() => {
         return () => setCancelled(true);
