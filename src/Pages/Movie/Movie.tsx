@@ -8,6 +8,7 @@ import {
 import './Movie.css';
 import MovieCard from '../../components/MovieCard/MovieCard';
 import { useFetchDocument } from '../../hooks/useFetchDocument';
+import Loading from '../../components/Loading/Loading';
 
 const Movie = () => {
   const { id } = useParams();
@@ -25,7 +26,7 @@ const Movie = () => {
     <div className='movie-page'>
       <div className="loading">
         <Link to="/">Voltar</Link>
-        {loading && <p>Carregando...</p>}
+        {loading && <Loading />}
       </div>
       {movie && <>
         <MovieCard movie={movie} showLink={false} />

@@ -2,6 +2,7 @@ import { Link, useSearchParams } from 'react-router-dom';
 import MovieCard from '../../components/MovieCard/MovieCard';
 import '../Grid.css';
 import { useFetchQuery } from '../../hooks/useFetchQuery';
+import Loading from '../../components/Loading/Loading';
 
 const Search = () => {
 
@@ -15,7 +16,7 @@ const Search = () => {
       <h2 className='title'>Resultados para: <span className="query-text">{query}</span></h2>
       <div className="loading">
         <Link to="/">Início</Link>
-        {loading && <p>Carregando...</p>}
+        {loading && <Loading />}
       </div>
       <div className="movies-container">
         {movie && movie.map((movie) => (

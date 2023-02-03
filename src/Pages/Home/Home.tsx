@@ -1,6 +1,7 @@
 import MovieCard from '../../components/MovieCard/MovieCard';
 import '../Grid.css';
 import { useFetchDocuments } from '../../hooks/useFetchDocuments';
+import Loading from '../../components/Loading/Loading';
 
 
 const Home = () => {
@@ -12,7 +13,7 @@ const Home = () => {
       <h2 className='title'>Melhores filmes:</h2>
       <div className="movies-container">
         {error && <p>{error}</p> }
-        {loading && <p>Carregando...</p>}
+        {loading && <Loading />}
         {movies && movies.map((movie) => (
           <MovieCard movie={movie} key={movie.id} />
         ))}

@@ -29,3 +29,7 @@ a:hover {
     margin-top: 2rem;
     color: #f7d354;
 }
+
+.loading img {
+    width: 100px;
+}
