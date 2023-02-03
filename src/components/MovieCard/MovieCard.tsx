@@ -12,6 +12,11 @@ interface Props {
 }
 
 const MovieCard = ({movie, showLink = true}: Props) => {
+
+    const formatTitleLink = (title: string) => {
+        return title.replace( /\s/g, '-')
+    }
+    
     return (
         <div className='movie-card'>
             <img src={imageUrl + movie.poster_path} alt={movie.title} />
@@ -19,7 +24,7 @@ const MovieCard = ({movie, showLink = true}: Props) => {
             <p>
                 <FaStar /> {movie.vote_average}
             </p>
-            {showLink && <Link to={`/movie/${movie.id}`}>Detalhes</Link>}
+            {showLink && <Link to={`/movie/${movie.id}/${formatTitleLink(movie.title)}`}>Detalhes</Link>}
         </div>
     )
 }
